@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b12">
+  <meta name="description" content="Premium Gemini + Jev AI chatbot">
+  <title>Gemini + Jev — AI Assistant</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <main class="app-shell">
+    <section class="chat-card">
+      <header class="chat-header">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="brand-copy">
+            <div class="eyebrow">AI ASSISTANT</div>
+            <h1>Gemini <span>+</span> Jev</h1>
+            <p>One chat. Intelligent routing. Natural answers.</p>
+          </div>
+        </div>
+        <div class="status-pill" id="status">
+          <i></i><span>Ready</span>
+        </div>
+      </header>
+
+      <div class="capabilities">
+        <div class="capability"><strong>Gemini</strong><span>Conversation</span></div>
+        <div class="capability"><strong>Jev</strong><span>Decisions</span></div>
+        <div class="capability"><strong>Auto</strong><span>Routing</span></div>
+      </div>
+
+      <section class="messages" id="messages" aria-live="polite">
+        <div class="welcome">
+          <div class="welcome-icon">✦</div>
+          <h2>What can I help you with?</h2>
+          <p>Ask a normal question or give me a decision to make. The system handles the routing automatically.</p>
+          <div class="suggestions">
+            <button type="button" data-prompt="Explain CSS flexbox in simple language">Explain something</button>
+            <button type="button" data-prompt="Is this message asking for a refund: I was charged twice for my order?">Make a decision</button>
+            <button type="button" data-prompt="Which department should handle a duplicate payment: billing, shipping, or technical?">Choose an option</button>
+          </div>
+        </div>
+      </section>
+
+      <form class="composer" id="chatForm">
+        <div class="input-wrap">
+          <textarea id="messageInput" rows="1" maxlength="8000"
+            placeholder="Message your AI assistant…" autocomplete="off" required></textarea>
+          <div class="input-hint"><span>Enter</span> to send · <span>Shift + Enter</span> for new line</div>
+        </div>
+        <button id="sendButton" type="submit" aria-label="Send message">
+          <span>Send</span>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3.5 10h12M10.5 4.5 16 10l-5.5 5.5"/></svg>
+        </button>
+      </form>
+
+      <footer class="chat-footer">
+        <div class="route-status"><span class="dot"></span><span id="routeInfo">Automatic routing enabled</span></div>
+        <button class="clear-btn" id="clearButton" type="button">Clear chat</button>
+      </footer>
+    </section>
+
+    <p class="security-note">Your API keys stay server-side in Vercel environment variables.</p>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
